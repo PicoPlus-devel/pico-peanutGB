@@ -1,12 +1,22 @@
 # CHANGELOG
 
-Brings back support for the original **Raspberry Pi Pico (RP2040)**, with limitations, and reworks **audio** so it no longer drifts against the output clock. Adds a **Recently played** list of the last 20 games, opened with Button3 in the menu. Also a round of speed work and a handful of display fixes.
+Maintenance release: updates the shared menu and support code. Fixes a black screen on **DVI-only monitors**, and stops **clone Pico boards** crashing at start-up. The emulator itself is unchanged.
 
 # General Info
 
 [Binaries for each configuration and PCB design are at the end of this page](#downloads___).
 
 [See setup section in in Pico-infoNesPlus readme how to install and wire up](https://github.com/fhoedemakers/pico-infonesPlus#pico-setup)
+
+# v0.13 Release notes
+
+A maintenance release. It brings the shared menu and support code up to date; the emulator itself is unchanged. Upgrading is only a matter of flashing the new `.uf2` — your settings, saves and save states on the SD card are untouched.
+
+## Fixes
+
+- **DVI-only monitors show a picture again.** With **Display Mode** set to DVI, some older screens that accept DVI but not HDMI stayed black. They work again.
+- **Clone Pico boards no longer crash at start-up.** Boards fitted with a cheaper flash chip than a genuine Raspberry Pi Pico could hang on power-on. The chip is now recognised and driven at a speed it can handle. Genuine Picos are unaffected.
+- **Steadier start-up.** The board lets its power settle before switching to the higher clock speed.
 
 # v0.12 Release notes
 
