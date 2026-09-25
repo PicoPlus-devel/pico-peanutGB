@@ -1,12 +1,25 @@
 # CHANGELOG
 
-Maintenance release: updates the shared menu and support code. Fixes a black screen on **DVI-only monitors**, and stops **clone Pico boards** crashing at start-up. The emulator itself is unchanged.
+Adds **USB drive mode**, which shows the SD card on a computer as a USB drive so games can be added without taking the card out, and an **overscan fix** for the menus.
 
 # General Info
 
 [Binaries for each configuration and PCB design are at the end of this page](#downloads___).
 
-[See setup section in in Pico-infoNesPlus readme how to install and wire up](https://github.com/fhoedemakers/pico-infonesPlus#pico-setup)
+[See setup section in in Pico-infoNesPlus readme how to install and wire up](https://github.com/PicoPlus-devel/pico-infonesPlus#pico-setup)
+
+# v0.14 Release notes
+
+## What's new
+
+- **USB drive mode.** The SD card can be shown on a computer as a USB drive, so games can be added or removed without taking the card out. Choose **USB drive mode** in the settings menu, opened from the menu (not during a game). Eject the drive on the computer when finished. On boards where controllers share the USB port with the computer, use a controller on the NES port. On RP2040 boards the screen stays off while the card is mounted and the console restarts afterwards. See [USB drive mode](https://github.com/PicoPlus-devel/pico-peanutGB#usb-drive-mode).
+- **Overscan fix in menu.** A new setting for TVs that cut off the edges of the screen. It leaves the top and bottom rows of the menus blank, and optionally the first and last columns as well. The change is shown right away in the settings menu.
+- **More options on one page in the settings menu.** The color palette is now only shown while one of the menu color options is selected, which leaves room for more options on screen.
+- **Quicker saving in the settings menu.** Press SELECT on any setting to jump straight to the SAVE/CANCEL/DEFAULT row.
+
+## Fixes
+
+- **Controller test screen** shows the controller outline and the list of controllers correctly again.
 
 # v0.13 Release notes
 
@@ -123,7 +136,7 @@ An RP2350 board normally holds a single program. Running a different
 emulator requires connecting the board to a computer, holding BOOTSEL
 and copying a different `.uf2` file onto it.
 
-[pico-bootLoader](https://github.com/fhoedemakers/pico-bootLoader)
+[pico-bootLoader](https://github.com/PicoPlus-devel/pico-bootLoader)
 removes that requirement. The loader is flashed onto the board once, the
 applications are placed on the SD card, and from then on a menu is shown
 at every power-on. The menu is operated with a USB game controller or a
@@ -142,7 +155,7 @@ Please note:
   unchanged. Use one of these to run the Game Boy emulator on its own.
 - The builds intended for the loader are published in the pico-bootLoader
   repository, not here. See the [pico-bootLoader releases
-  page](https://github.com/fhoedemakers/pico-bootLoader/releases) for
+  page](https://github.com/PicoPlus-devel/pico-bootLoader/releases) for
   those files and for the installation instructions.
 - When the emulator is started from the loader, the settings menu
   contains an additional entry, **Return to emulator selection**, which
@@ -235,7 +248,7 @@ Hold **SELECT + START** for two seconds to leave the screen.
 
 # previous changes
 
-See [HISTORY.md](https://github.com/fhoedemakers/pico-peanutGB/blob/main/HISTORY.md)
+See [HISTORY.md](https://github.com/PicoPlus-devel/pico-peanutGB/blob/main/HISTORY.md)
 
 
 <a name="downloads___"></a>
@@ -248,32 +261,32 @@ For some configurations risc-v binaries are available. It is recommended however
 
 | Board | Binary | Readme | |
 |:--|:--|:--|:--|
-| Adafruit Metro RP2350 | [PicoPeanutGB_AdafruitMetroRP2350_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitMetroRP2350_arm.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#adafruit-metro-rp2350) | |
-| Adafruit Fruit Jam | [PicoPeanutGB_AdafruitFruitJam_arm_piousb.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitFruitJam_arm_piousb.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#adafruit-fruit-jam)| |
-| Waveshare RP2350-PiZero | [PicoPeanutGB_WaveShareRP2350PiZero_arm_piousb.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_WaveShareRP2350PiZero_arm_piousb.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#waveshare-rp2040rp2350-pizero-development-board)| [3-D Printed case](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#3d-printed-case-for-rp2040rp2350-pizero) |
-| [SpotPear HDMI](https://spotpear.com/index/product/detail/id/1207.html) | [PicoPeanutGB_SpotpearHDMI_pico2_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_SpotpearHDMI_pico2_arm.uf2) | — | |
-| Adafruit Feather RP2040 DVI **(RP2040, DMG only)** | [PicoPeanutGB_AdafruitFeatherDVI_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitFeatherDVI_arm.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#adafruit-feather-rp2040-with-dvi-hdmi-output-port-setup) | |
-| Waveshare RP2040-PiZero **(RP2040, DMG only)** | [PicoPeanutGB_WaveShareRP2040PiZero_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_WaveShareRP2040PiZero_arm.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#waveshare-rp2040rp2350-pizero-development-board)| [3-D Printed case](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#3d-printed-case-for-rp2040rp2350-pizero) |
+| Adafruit Metro RP2350 | [PicoPeanutGB_AdafruitMetroRP2350_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitMetroRP2350_arm.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#adafruit-metro-rp2350) | |
+| Adafruit Fruit Jam | [PicoPeanutGB_AdafruitFruitJam_arm_piousb.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitFruitJam_arm_piousb.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#adafruit-fruit-jam)| |
+| Waveshare RP2350-PiZero | [PicoPeanutGB_WaveShareRP2350PiZero_arm_piousb.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_WaveShareRP2350PiZero_arm_piousb.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#waveshare-rp2040rp2350-pizero-development-board)| [3-D Printed case](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#3d-printed-case-for-rp2040rp2350-pizero) |
+| [SpotPear HDMI](https://spotpear.com/index/product/detail/id/1207.html) | [PicoPeanutGB_SpotpearHDMI_pico2_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_SpotpearHDMI_pico2_arm.uf2) | — | |
+| Adafruit Feather RP2040 DVI **(RP2040, DMG only)** | [PicoPeanutGB_AdafruitFeatherDVI_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitFeatherDVI_arm.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#adafruit-feather-rp2040-with-dvi-hdmi-output-port-setup) | |
+| Waveshare RP2040-PiZero **(RP2040, DMG only)** | [PicoPeanutGB_WaveShareRP2040PiZero_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_WaveShareRP2040PiZero_arm.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#waveshare-rp2040rp2350-pizero-development-board)| [3-D Printed case](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#3d-printed-case-for-rp2040rp2350-pizero) |
 
 ### Breadboard
 
 | Board | Binary | Readme |
 |:--|:--|:--|
-| Pico 2 | [PicoPeanutGB_AdafruitDVISD_pico2_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitDVISD_pico2_arm.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-with-adafruit-hardware-and-breadboard) |
-| Pico 2 W | [PicoPeanutGB_AdafruitDVISD_pico2_w_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitDVISD_pico2_w_arm.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-with-adafruit-hardware-and-breadboard) |
-| Pimoroni Pico Plus 2 | [PicoPeanutGB_AdafruitDVISD_pico2_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitDVISD_pico2_arm.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-with-adafruit-hardware-and-breadboard) |
-| Pico **(RP2040, DMG only)** | [PicoPeanutGB_AdafruitDVISD_pico_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitDVISD_pico_arm.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-with-adafruit-hardware-and-breadboard) |
+| Pico 2 | [PicoPeanutGB_AdafruitDVISD_pico2_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitDVISD_pico2_arm.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-with-adafruit-hardware-and-breadboard) |
+| Pico 2 W | [PicoPeanutGB_AdafruitDVISD_pico2_w_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitDVISD_pico2_w_arm.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-with-adafruit-hardware-and-breadboard) |
+| Pimoroni Pico Plus 2 | [PicoPeanutGB_AdafruitDVISD_pico2_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitDVISD_pico2_arm.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-with-adafruit-hardware-and-breadboard) |
+| Pico **(RP2040, DMG only)** | [PicoPeanutGB_AdafruitDVISD_pico_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitDVISD_pico_arm.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-with-adafruit-hardware-and-breadboard) |
 
 
 ### PCB Pico2
 
 | Board | Binary | Readme |
 |:--|:--|:--|
-| Pico 2 | [PicoPeanutGB_AdafruitDVISD_pico2_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitDVISD_pico2_arm.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#pcb-with-raspberry-pi-pico-or-pico-2) |
-| Pico 2 W | [PicoPeanutGB_AdafruitDVISD_pico2_w_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitDVISD_pico2_w_arm.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#pcb-with-raspberry-pi-pico-or-pico-2) |
-| Pico **(RP2040, DMG only)** | [PicoPeanutGB_AdafruitDVISD_pico_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitDVISD_pico_arm.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#pcb-with-raspberry-pi-pico-or-pico-2) |
+| Pico 2 | [PicoPeanutGB_AdafruitDVISD_pico2_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitDVISD_pico2_arm.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#pcb-with-raspberry-pi-pico-or-pico-2) |
+| Pico 2 W | [PicoPeanutGB_AdafruitDVISD_pico2_w_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitDVISD_pico2_w_arm.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#pcb-with-raspberry-pi-pico-or-pico-2) |
+| Pico **(RP2040, DMG only)** | [PicoPeanutGB_AdafruitDVISD_pico_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_AdafruitDVISD_pico_arm.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#pcb-with-raspberry-pi-pico-or-pico-2) |
 
-PCB [pico_nesPCB_v2.6.zip](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/pico_nesPCB_v2.6.zip)
+PCB [pico_nesPCB_v2.6.zip](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/pico_nesPCB_v2.6.zip)
 
 3D-printed case designs for PCB:
 
@@ -289,19 +302,19 @@ For the latest two player PCB 2.0, you need:
 
 | Board | Binary | Readme |
 |:--|:--|:--|
-| Waveshare RP2350-Zero | [PicoPeanutGB_WaveShareRP2350ZeroWithPCB_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_WaveShareRP2350ZeroWithPCB_arm.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#pcb-with-waveshare-rp2040rp2350-zero) |
+| Waveshare RP2350-Zero | [PicoPeanutGB_WaveShareRP2350ZeroWithPCB_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_WaveShareRP2350ZeroWithPCB_arm.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#pcb-with-waveshare-rp2040rp2350-zero) |
 
-PCB: [Gerber_PicoNES_Mini_PCB_v2.0.zip](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/Gerber_PicoNES_Mini_PCB_v2.0.zip)
+PCB: [Gerber_PicoNES_Mini_PCB_v2.0.zip](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/Gerber_PicoNES_Mini_PCB_v2.0.zip)
 
 3D-printed case designs for PCB WS2XX0-Zero:
 [https://www.thingiverse.com/thing:7041536](https://www.thingiverse.com/thing:7041536)
 
 ### PCB Waveshare RP2350-USBA with PCB
-[Binary](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_WaveShare2350USBA_arm_piousb.uf2)
+[Binary](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_WaveShare2350USBA_arm_piousb.uf2)
 
-PCB: [Gerber_PicoNES_Micro_v1.2.zip](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/Gerber_PicoNES_Micro_v1.2.zip)
+PCB: [Gerber_PicoNES_Micro_v1.2.zip](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/Gerber_PicoNES_Micro_v1.2.zip)
 
-[Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#pcb-with-waveshare-rp2350-usb-a)
+[Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#pcb-with-waveshare-rp2350-usb-a)
 
 [Build guide](https://www.instructables.com/PicoNES-RaspberryPi-Pico-Based-NES-Emulator/)
 
@@ -310,32 +323,32 @@ PCB: [Gerber_PicoNES_Micro_v1.2.zip](https://github.com/fhoedemakers/pico-peanut
 
 | Board | Binary | Readme |
 |:--|:--| :--|
-| Pico 2/Pico 2 w | [PicoPeanutGB_PimoroniDVI_pico2_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_PimoroniDVI_pico2_arm.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-for-pimoroni-pico-dv-demo-base) |
-| Pimoroni Pico Plus 2 | [PicoPeanutGB_PimoroniDVI_pico2_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_PimoroniDVI_pico2_arm.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-for-pimoroni-pico-dv-demo-base) |
-| Pico **(RP2040, DMG only)** | [PicoPeanutGB_PimoroniDVI_pico_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_PimoroniDVI_pico_arm.uf2) | [Readme](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-for-pimoroni-pico-dv-demo-base) |
+| Pico 2/Pico 2 w | [PicoPeanutGB_PimoroniDVI_pico2_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_PimoroniDVI_pico2_arm.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-for-pimoroni-pico-dv-demo-base) |
+| Pimoroni Pico Plus 2 | [PicoPeanutGB_PimoroniDVI_pico2_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_PimoroniDVI_pico2_arm.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-for-pimoroni-pico-dv-demo-base) |
+| Pico **(RP2040, DMG only)** | [PicoPeanutGB_PimoroniDVI_pico_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_PimoroniDVI_pico_arm.uf2) | [Readme](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-for-pimoroni-pico-dv-demo-base) |
 
 > [!NOTE]
 > On Pico W and Pico2 W, the CYW43 driver (used only for blinking the onboard LED) causes a DMA conflict with I2S audio on the Pimoroni Pico DV Demo Base, leading to emulator lock-ups. For now, no Pico W or Pico2 W binaries are provided; please use the Pico or Pico2 binaries instead.
 
 ### Murmulator M1
 
-For more info about the Murmulator see this website: https://murmulator.ru/ and [#150](https://github.com/fhoedemakers/pico-infonesPlus/issues/150)
+For more info about the Murmulator see this website: https://murmulator.ru/ and [#150](https://github.com/PicoPlus-devel/pico-infonesPlus/issues/150)
 
 | Board | Binary |
 |:--|:--|
-| Pico 2/Pico 2 w | [PicoPeanutGB_MurmulatorM1_pico2_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_MurmulatorM1_pico2_arm.uf2) |
+| Pico 2/Pico 2 w | [PicoPeanutGB_MurmulatorM1_pico2_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_MurmulatorM1_pico2_arm.uf2) |
 
 ### Murmulator M2
 
-For more info about the Murmulator see this website: https://murmulator.ru/ and [#150](https://github.com/fhoedemakers/pico-infonesPlus/issues/150)
+For more info about the Murmulator see this website: https://murmulator.ru/ and [#150](https://github.com/PicoPlus-devel/pico-infonesPlus/issues/150)
 
 | Board | Binary |
 |:--|:--|
-| Pico/Pico w | [PicoPeanutGB_MurmulatorM2_arm.uf2](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/PicoPeanutGB_MurmulatorM2_arm.uf2) |
+| Pico/Pico w | [PicoPeanutGB_MurmulatorM2_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_MurmulatorM2_arm.uf2) |
 
 ### Other downloads
 
-- Metadata: [GBMetadata.zip](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/GBMetadata.zip)
+- Metadata: [GBMetadata.zip](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/GBMetadata.zip)
 
 
 Extract the zip file to the root folder of the SD card. Select a game in the menu and press START to show more information and box art. Works for most official released games. Screensaver shows floating random cover art.

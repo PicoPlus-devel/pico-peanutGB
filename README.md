@@ -16,7 +16,7 @@ Put your DMG Game Boy (.gb) or Game Boy Color (.gbc) rom files,  and optional [m
 ## System requirements - What do you need?
 
 > [!NOTE]
-> For detailed instructions and specific configurations, see the [Pico-InfonesPlus sister project](https://github.com/fhoedemakers/pico-infonesPlus). 
+> For detailed instructions and specific configurations, see the [Pico-InfonesPlus sister project](https://github.com/PicoPlus-devel/pico-infonesPlus). 
 
 ### Hardware
 
@@ -28,15 +28,15 @@ The RP2350 boards play both Game Boy and Game Boy Color games. The RP2040 boards
 
 | Configuration | Setup | Notes |
 | --- | --- | --- |
-| **Raspberry Pi Pico 2 / Pico 2 W** on a breadboard with the [Adafruit DVI breakout](https://www.adafruit.com/product/4984) and [Adafruit microSD breakout](https://www.adafruit.com/product/254) | [Setup](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-with-adafruit-hardware-and-breadboard) | No soldering required. |
-| **Raspberry Pi Pico 2 / Pico 2 W** on the [PicoNES PCB](#picones-pcb) | [Setup](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#pcb-with-raspberry-pi-pico-or-pico-2-and-pimoroni-pico-plus-2) | Same binary as the breadboard build. Console-style carrier with controller ports and an optional 3D printed case. |
-| **Raspberry Pi Pico 2** on a [Pimoroni Pico DV Demo Base](https://shop.pimoroni.com/products/pimoroni-pico-dv-demo-base?variant=39494203998291) | [Setup](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-for-pimoroni-pico-dv-demo-base) | Audio can be switched to the line-out jack. Use the Pico 2 binary on a Pico 2 W as well: the onboard LED driver conflicts with I2S audio here, so no W build is published. |
+| **Raspberry Pi Pico 2 / Pico 2 W** on a breadboard with the [Adafruit DVI breakout](https://www.adafruit.com/product/4984) and [Adafruit microSD breakout](https://www.adafruit.com/product/254) | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-with-adafruit-hardware-and-breadboard) | No soldering required. |
+| **Raspberry Pi Pico 2 / Pico 2 W** on the [PicoNES PCB](#picones-pcb) | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#pcb-with-raspberry-pi-pico-or-pico-2-and-pimoroni-pico-plus-2) | Same binary as the breadboard build. Console-style carrier with controller ports and an optional 3D printed case. |
+| **Raspberry Pi Pico 2** on a [Pimoroni Pico DV Demo Base](https://shop.pimoroni.com/products/pimoroni-pico-dv-demo-base?variant=39494203998291) | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-for-pimoroni-pico-dv-demo-base) | Audio can be switched to the line-out jack. Use the Pico 2 binary on a Pico 2 W as well: the onboard LED driver conflicts with I2S audio here, so no W build is published. |
 | [**Pimoroni Pico Plus 2**](https://shop.pimoroni.com/products/pimoroni-pico-plus-2?variant=42092668289107) | Use the breadboard or Pimoroni Pico DV Demo Base setup | Roms are loaded into the onboard PSRAM instead of flash. Fits the [PicoNES PCB](#picones-pcb) from design v2.6 onwards, provided male headers are soldered on. |
-| [**Adafruit Metro RP2350**](https://www.adafruit.com/product/6003), also [with PSRAM](https://www.adafruit.com/product/6267) | [Setup](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#adafruit-metro-rp2350) | With PSRAM fitted, roms are loaded into PSRAM instead of flash. Works fine without it. |
-| [**Adafruit Fruit Jam**](https://www.adafruit.com/product/6200) | [Setup](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#adafruit-fruit-jam) | Nothing else needed but a USB gamepad. Built-in speaker with volume control and a NeoPixel VU meter. Roms are loaded into PSRAM. |
-| [**Waveshare RP2350-PiZero**](https://www.waveshare.com/rp2350-pizero.htm) | [Setup](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#waveshare-rp2040rp2350-pizero-development-board) | Supports the optional PSRAM chip. [3D printed case](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#3d-printed-case-for-rp2040rp2350-pizero) available. |
-| **Waveshare RP2350-Zero** on the [PicoNES Mini PCB](#picones-mini-pcb) | [Setup](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#pcb-with-waveshare-rp2040rp2350-zero) | PCB required, advanced soldering. |
-| **Waveshare RP2350-USB-A** on the [PicoNES Micro PCB](#picones-micro-pcb) | [Setup](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#pcb-with-waveshare-rp2350-usb-a) | PCB required, USB controller only. The most demanding of the three builds. |
+| [**Adafruit Metro RP2350**](https://www.adafruit.com/product/6003), also [with PSRAM](https://www.adafruit.com/product/6267) | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#adafruit-metro-rp2350) | With PSRAM fitted, roms are loaded into PSRAM instead of flash. Works fine without it. |
+| [**Adafruit Fruit Jam**](https://www.adafruit.com/product/6200) | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#adafruit-fruit-jam) | Nothing else needed but a USB gamepad. Built-in speaker with volume control and a NeoPixel VU meter. Roms are loaded into PSRAM. |
+| [**Waveshare RP2350-PiZero**](https://www.waveshare.com/rp2350-pizero.htm) | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#waveshare-rp2040rp2350-pizero-development-board) | Supports the optional PSRAM chip. [3D printed case](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#3d-printed-case-for-rp2040rp2350-pizero) available. |
+| **Waveshare RP2350-Zero** on the [PicoNES Mini PCB](#picones-mini-pcb) | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#pcb-with-waveshare-rp2040rp2350-zero) | PCB required, advanced soldering. |
+| **Waveshare RP2350-USB-A** on the [PicoNES Micro PCB](#picones-micro-pcb) | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#pcb-with-waveshare-rp2350-usb-a) | PCB required, USB controller only. The most demanding of the three builds. |
 | [**SpotPear HDMI**](https://spotpear.com/index/product/detail/id/1207.html) | — | No setup section; wire the board according to its own documentation. |
 | **Murmulator M1** with a Pico 2 | — | See [murmulator.ru](https://murmulator.ru). Untested by me, please report any issues. |
 | **Murmulator M2** | — | RP2350 only. See [murmulator.ru](https://murmulator.ru). Untested by me, please report any issues. |
@@ -45,12 +45,12 @@ The RP2350 boards play both Game Boy and Game Boy Color games. The RP2040 boards
 
 | Configuration | Setup |
 | --- | --- |
-| **Raspberry Pi Pico** on a breadboard with the [Adafruit DVI breakout](https://www.adafruit.com/product/4984) and [Adafruit microSD breakout](https://www.adafruit.com/product/254), or on the [PicoNES PCB](#picones-pcb) | [Setup](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-with-adafruit-hardware-and-breadboard) |
-| **Raspberry Pi Pico** on a [Pimoroni Pico DV Demo Base](https://shop.pimoroni.com/products/pimoroni-pico-dv-demo-base?variant=39494203998291) | [Setup](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-for-pimoroni-pico-dv-demo-base) |
-| [**Adafruit Feather RP2040 DVI**](https://www.adafruit.com/product/5710) with an SD reader | [Setup](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#adafruit-feather-rp2040-with-dvi-hdmi-output-port-setup) |
-| [**Waveshare RP2040-PiZero**](https://www.waveshare.com/rp2040-pizero.htm) | [Setup](https://github.com/fhoedemakers/pico-infonesPlus/blob/main/README.md#waveshare-rp2040rp2350-pizero-development-board) |
+| **Raspberry Pi Pico** on a breadboard with the [Adafruit DVI breakout](https://www.adafruit.com/product/4984) and [Adafruit microSD breakout](https://www.adafruit.com/product/254), or on the [PicoNES PCB](#picones-pcb) | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-with-adafruit-hardware-and-breadboard) |
+| **Raspberry Pi Pico** on a [Pimoroni Pico DV Demo Base](https://shop.pimoroni.com/products/pimoroni-pico-dv-demo-base?variant=39494203998291) | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#raspberry-pi-pico-or-pico-2-setup-for-pimoroni-pico-dv-demo-base) |
+| [**Adafruit Feather RP2040 DVI**](https://www.adafruit.com/product/5710) with an SD reader | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#adafruit-feather-rp2040-with-dvi-hdmi-output-port-setup) |
+| [**Waveshare RP2040-PiZero**](https://www.waveshare.com/rp2040-pizero.htm) | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#waveshare-rp2040rp2350-pizero-development-board) |
 
-The binary specific for your config and optional PCB gerber files can be downloaded from the [releases](https://github.com/fhoedemakers/pico-peanutGB/releases/latest) page.
+The binary specific for your config and optional PCB gerber files can be downloaded from the [releases](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest) page.
 
 ## Custom PCBs
 
@@ -62,9 +62,9 @@ Three community PCB designs turn a supported board and its breakouts into a fini
 | [PicoNES Mini](#picones-mini-pcb) | Waveshare RP2350-Zero | `-c6` | `Gerber_PicoNES_Mini_PCB_v2.0.zip` | Gavin Knight |
 | [PicoNES Micro](#picones-micro-pcb) | Waveshare RP2350-USB-A | `-c9` | `Gerber_PicoNES_Micro_v1.2.zip` | Gavin Knight |
 
-All three archives are attached to every [release](https://github.com/fhoedemakers/pico-peanutGB/releases/latest) of this project and also live in [pico_shared/PCB](https://github.com/fhoedemakers/pico_shared/tree/main/PCB). Upload the zip as-is to a PCB manufacturer of your choice; [PCBWay](https://www.pcbway.com/) and JLCPCB are both good options.
+All three archives are attached to every [release](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest) of this project and also live in [pico_shared/PCB](https://github.com/PicoPlus-devel/pico_shared/tree/main/PCB). Upload the zip as-is to a PCB manufacturer of your choice; [PCBWay](https://www.pcbway.com/) and JLCPCB are both good options.
 
-The designs come from [pico-infonesPlus](https://github.com/fhoedemakers/pico-infonesPlus) and kept their NES-flavoured names, but there is nothing NES-specific about them — they are DVI, microSD and controller wiring, and this emulator runs on them just as well.
+The designs come from [pico-infonesPlus](https://github.com/PicoPlus-devel/pico-infonesPlus) and kept their NES-flavoured names, but there is nothing NES-specific about them — they are DVI, microSD and controller wiring, and this emulator runs on them just as well.
 
 > [!NOTE]
 > Sellers on AliExpress have copied the PicoNES design and sell ready-made boards. For questions about those, contact the seller.
@@ -107,7 +107,7 @@ Design v2.6 added through-holes, so there are now two ways to fit the board:
 
 #### About the second controller port
 
-A Game Boy is a single player machine, so only port 1 drives the emulator. A controller in port 2 still works in the menu, but not in a game — populating one port is enough unless you also run [pico-infonesPlus](https://github.com/fhoedemakers/pico-infonesPlus) or another two-player emulator on the same board.
+A Game Boy is a single player machine, so only port 1 drives the emulator. A controller in port 2 still works in the menu, but not in a game — populating one port is enough unless you also run [pico-infonesPlus](https://github.com/PicoPlus-devel/pico-infonesPlus) or another two-player emulator on the same board.
 
 > [!NOTE]
 > A plain NES controller is short of buttons here, as noted under [Gamepad and keyboard usage](#gamepad-and-keyboard-usage). The sockets speak the SNES protocol as well, so an SNES pad with a [SNES-to-NES adapter cable](https://nl.aliexpress.com/item/1005007923169070.html) — [or one you make yourself](http://www.neshq.com/hardmods/snes_to_nes_controller.txt) — is the better choice.
@@ -133,7 +133,7 @@ Gavin Knight ([DynaMight1124](https://github.com/DynaMight1124)) designed an NES
 
 <img width="480" alt="Top cover with a button for BOOTSEL" src="https://github.com/user-attachments/assets/3c8f8990-51b9-4873-9054-64bb2cd6c300" />
 
-For the full photo gallery and assembly detail, see the [PCB section of the pico-infonesPlus documentation](https://github.com/fhoedemakers/pico-infonesPlus#pcb-with-raspberry-pi-pico-or-pico-2-and-pimoroni-pico-plus-2).
+For the full photo gallery and assembly detail, see the [PCB section of the pico-infonesPlus documentation](https://github.com/PicoPlus-devel/pico-infonesPlus#pcb-with-raspberry-pi-pico-or-pico-2-and-pimoroni-pico-plus-2).
 
 ### PicoNES Mini PCB
 
@@ -228,7 +228,9 @@ It is not advised to use a NES controller because it lacks enough buttons.
 - Button1 : Back to parent folder.
 - Button3 : Open the [recently played list](#recently-played-games).
 - START: Show metadata and box art (when available). 
-- SELECT: Opens a setting menu. Here you can change settings like screen mode, scanlines, framerate display, menu colors and other board specific settings. Settings can also be changed in-game by pressing some button combinations as explained below. The settings menu can also be opened in-game.
+- SELECT: Opens a setting menu. Here you can change settings like screen mode, scanlines, framerate display, menu colors, the overscan fix for the menus, [USB drive mode](#usb-drive-mode) and other board specific settings. Settings can also be changed in-game by pressing some button combinations as explained below. The settings menu can also be opened in-game.
+
+**Overscan fix in menu** is meant for TVs that cut off the edges of the picture: **Rows** leaves the top and bottom text rows of the menus blank, **Rows & columns** also leaves the first and last columns blank. The effect is shown while the setting is changed, and it applies to the menus only, not to the game picture. The color palette is shown only while one of the two menu color entries is selected, which leaves room for more entries on one page. In the settings menu, press SELECT on any setting to jump straight to the SAVE/CANCEL/DEFAULT row. Changes are only applied when **SAVE** is selected.
 
 ## Recently played games
 
@@ -254,6 +256,28 @@ The list is kept in **`/recent_GB.txt`** in the root of the SD card, as plain te
 If a game was moved, renamed or deleted on the SD card in the meantime, the list says so instead of starting it. Use SELECT to remove such an entry.
 
 On boards **without** PSRAM, one entry can be tagged **[READY]**. That is the game whose rom is currently written to flash, which is the one that starts without waiting for the flashing step described [above](#what-the-pimoroni-pico-plus-2-adds).
+
+## USB drive mode
+
+USB drive mode presents the SD card to a computer as a USB mass storage device, so games can be added or removed without taking the card out of the console. Connect the console to the computer, open the settings menu with SELECT from the menu and choose **USB drive mode**. The card appears on the computer as a removable drive.
+
+The entry is only offered when the settings menu is opened from the menu. It is not available while a game is running: the running game holds its save files open and its rom is mapped out of flash, and letting the computer rewrite the card underneath that would corrupt both.
+
+When you are finished, eject the drive on the computer. The console notices this and leaves USB drive mode by itself. Pressing Button1 on the console leaves as well, for when no computer is attached. If no computer connects within 20 seconds, the console leaves USB drive mode by itself. The rom list is re-read on the way out, so files added from the computer appear without having to restart.
+
+> [!NOTE]
+> Transfers are slow. The console is a USB full-speed device and reaches the card a sector at a time over SPI, so copying is far slower than reading the card in a card reader. USB drive mode is meant for adding or replacing a few games. For filling a card, or for copying a large amount of data, take the card out and use a card reader.
+
+Behaviour depends on where controllers are connected on your board.
+
+| Board | Behaviour |
+| ----- | --------- |
+| Controllers on a separate USB port (boards built with PIO USB, such as the Fruit Jam) | The console's own USB port is free, so controllers keep working and the screen stays on. The menu returns to the rom list when you are done. |
+| Controllers on the console's own USB port | That port is the one connected to the computer, so a USB controller cannot be used while the card is mounted. Press Button1 on a controller in the NES controller port, or eject the drive on the computer. The console restarts afterwards. |
+| RP2040 boards | As above, and the screen is switched off for as long as the card is mounted. These boards cannot drive the video output while the computer is reading the card. The menu explains this first and lets you go back without mounting anything. |
+
+> [!CAUTION]
+> Eject the drive on the computer rather than pressing Button1. Ejecting makes the computer write out anything it still had cached, and the console leaves USB drive mode on its own once it has. Pressing Button1 while the computer still has the drive open can leave files on the card incomplete.
 
 ## Emulator (in game)
 
@@ -282,8 +306,8 @@ On boards **without** PSRAM, one entry can be tagged **[READY]**. That is the ga
 
 <img width="640" height="360" alt="image" src="https://github.com/user-attachments/assets/f6aeb7cd-702b-4064-a69c-e8de36dcb6be" />
 
-Download the metadata pack from the [releases page](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/GBMetadata.zip) It contains box art, game info and themed borders/bezels for many games. The metadata is used in the menu to show box art and game info when a rom is selected.  When the screensaver is started, random box art is shown. When in-game, themed borders/bezels are shown around the game screen.
-- Download pack [here](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/GBMetadata.zip).  
+Download the metadata pack from the [releases page](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/GBMetadata.zip) It contains box art, game info and themed borders/bezels for many games. The metadata is used in the menu to show box art and game info when a rom is selected.  When the screensaver is started, random box art is shown. When in-game, themed borders/bezels are shown around the game screen.
+- Download pack [here](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/GBMetadata.zip).  
   - Extract the zip contents to the **root of the SD card**.  
   - In the menu:  
     - Highlight a game and press **START** → show cover art and metadata.  
@@ -343,5 +367,5 @@ This emulator is other people's work brought together on a Pico.
 **This project**
 
 - **PicoPeanutGB** — the port to the Pico, the menu, the settings screen and the board support — is by **Frank Hoedemakers** ([@fhoedemakers](https://github.com/fhoedemakers)).
-- The menu, settings, controller handling and board configurations are shared with [pico-infonesPlus](https://github.com/fhoedemakers/pico-infonesPlus) and the other emulators in the family through [pico_shared](https://github.com/fhoedemakers/pico_shared).
+- The menu, settings, controller handling and board configurations are shared with [pico-infonesPlus](https://github.com/PicoPlus-devel/pico-infonesPlus) and the other emulators in the family through [pico_shared](https://github.com/PicoPlus-devel/pico_shared).
 - Part of the code and documentation was written with the assistance of **[Claude Code](https://claude.com/claude-code)**, Anthropic's agentic coding tool.
