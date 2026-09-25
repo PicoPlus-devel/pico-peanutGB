@@ -830,7 +830,11 @@ int main()
     {
         if (strlen(selectedRom) == 0 || reset == true)
         {
+#if PICO_RP2350
             menu("Pico-PeanutGB", ErrorMessage, isFatalError, showSplash, ".gb .gbc", selectedRom); 
+#else
+            menu("Pico-PeanutGB", ErrorMessage, isFatalError, showSplash, ".gb", selectedRom); 
+#endif         
         }
       
         printf("Now playing: %s\n", selectedRom);
