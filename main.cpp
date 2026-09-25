@@ -28,48 +28,49 @@
 #define CPUKFREQKHZ 252000
 #endif
 
-// Visibility configuration for options menu (NES specific)
-// 1 = show option line, 0 = hide.
-// Order must match enum in menu_options.h
+// Visibility configuration for options menu (Game Boy specific)
+// 1 = show option line, 0 = hide. Options not listed here default to 0.
 const int8_t g_settings_visibility_gb[MOPT_COUNT] = {
-    0,                               // Exit Game, or back to menu. Always visible when in-game.
-    0,                               // Reset Game
-    BOOTLOADER_BUILD,                // Return to emuLoader picker (only when built for the loader)
+    [MOPT_EXIT_GAME]               = 0,                    // Exit Game, or back to menu. Always visible when in-game.
+    [MOPT_RESET_GAME]              = 0,                    // Reset Game
+    [MOPT_REBOOT_TO_LOADER]        = BOOTLOADER_BUILD,     // Return to emuLoader picker (only when built for the loader)
     // -1, not 0: the in-game menu force-shows Exit Game, Reset Game and Save /
     // Restore State whatever this array says, so 0 only hides a row in the file
     // browser. This port has no save-state implementation at all, so the row has
     // to be suppressed outright, which is what -1 does.
-    -1,                              // Save / Restore State
-    1,                               // Screen Mode
-    0,                               // Scanlines toggle (superseded by Screen Mode)
-    HSTX,                            // Scanline Type (HSTX only)
-    1,                               // FPS Overlay
-    0,                               // Audio Enable
-    0,                               // Frame Skip
-    HSTX && ENABLEDVI,               // Display Mode (HDMI or DVI, only when HSTX is enabled, because non-HSTX builds always use HDMI)
-    (EXT_AUDIO_IS_ENABLED ), // External Audio
-    1,                               // Font Color
-    1,                               // Font Back Color
-    ENABLE_VU_METER,                 // VU Meter
-    //(HW_CONFIG == 8),                // Fruit Jam Internal Speaker
-    (HW_CONFIG == 8),                // Fruit Jam Volume Control
-    1,                               // DMG Palette (NES emulator does not use GameBoy palettes)
-    1,                               // Border Mode (Super Gameboy style borders not applicable for NES)
-    0,                               // Rapid Fire on A
-    0,                               // Rapid Fire on B
-    0,                               // Auto Insert Disk A, enabled at runtime on RP2350
-    0,                               // Auto Swap FDS, enabled at runtime on RP2350
-    0,                               // FDS Disk Swap (toggled on after fdsParse succeeds)
-    0,                               // Overclock (CPU high clock toggle)
-    0,                               // YM Audio SMS Only
-    1,                               // Enter bootsel mode
-    1,                               // Controller Test
-    // Recent Games is rom-browser only and menu.cpp forces it visible on >= 0,
-    // so it already showed via the zero-fill this list left behind. Stated
-    // explicitly so the array length matches MOPT_COUNT again: the next option
-    // appended to the enum then lands on a slot that is missing here, rather
-    // than silently inheriting this one's value. Set to -1 to hide it.
-    1,                               // Recent Games
+    [MOPT_SAVE_RESTORE_STATE]      = -1,                   // Save / Restore State
+    [MOPT_SCREENMODE]              = 1,                    // Screen Mode
+    [MOPT_SCANLINES]               = 0,                    // Scanlines toggle (superseded by Screen Mode)
+    [MOPT_SCANLINE_TYPE]           = HSTX,                 // Scanline Type (HSTX only)
+    [MOPT_FPS_OVERLAY]             = 1,                    // FPS Overlay
+    [MOPT_AUDIO_ENABLE]            = 0,                    // Audio Enable
+    [MOPT_FRAMESKIP]               = 0,                    // Frame Skip
+    [MOPT_DISPLAY_MODE]            = HSTX && ENABLEDVI,    // Display Mode (HDMI or DVI, only when HSTX is enabled, because non-HSTX builds always use HDMI)
+    [MOPT_EXTERNAL_AUDIO]          = EXT_AUDIO_IS_ENABLED, // External Audio
+    [MOPT_FONT_COLOR]              = 1,                    // Font Color
+    [MOPT_FONT_BACK_COLOR]         = 1,                    // Font Back Color
+    [MOPT_FRUITJAM_VUMETER]        = ENABLE_VU_METER,      // VU Meter
+    [MOPT_FRUITJAM_VOLUME_CONTROL] = (HW_CONFIG == 8),     // Fruit Jam Volume Control
+    [MOPT_DMG_PALETTE]             = 1,                    // DMG Palette
+    [MOPT_BORDER_MODE]             = 1,                    // Border Mode (Super Game Boy style borders)
+    [MOPT_RAPID_FIRE_ON_A]         = 0,                    // Rapid Fire on A
+    [MOPT_RAPID_FIRE_ON_B]         = 0,                    // Rapid Fire on B
+    [MOPT_AUTO_INSERT_FDS_DISK_A]  = 0,                    // Auto Insert Disk A (NES only)
+    [MOPT_AUTO_SWAP_FDS_DISK]      = 0,                    // Auto Swap FDS (NES only)
+    [MOPT_FDS_DISK_SWAP]           = 0,                    // FDS Disk Swap (NES only)
+    [MOPT_OVERCLOCK]               = 0,                    // Overclock (CPU high clock toggle)
+    [MOPT_FM_AUDIO]                = 0,                    // YM2413 FM (SMS only)
+    [MOPT_ENTER_BOOTSEL_MODE]      = 1,                    // Enter bootsel mode
+    [MOPT_CONTROLLER_TEST]         = 1,                    // Controller Test
+    // Recent Games is rom-browser only and menu.cpp forces it visible on >= 0.
+    // Set to -1 to hide it.
+    [MOPT_RECENT_GAMES]            = 1,                    // Recent Games
+    [MOPT_USB_DRIVE_MODE]          = 0,                    // USB Drive Mode (menu.cpp force-shows this in the rom browser)
+    [MOPT_CASSETTE]                = 0,                    // Cassette (TI-99/4A only)
+    [MOPT_DISK]                    = 0,                    // Disk (TI-99/4A only)
+    [MOPT_SERIAL_KEYBOARD]         = 0,                    // Serial keyboard (TI-99/4A only)
+    [MOPT_SPRITE_LIMIT]            = 0,                    // Sprite Limit (NES only)
+    [MOPT_MENU_OVERSCAN]           = 0,                    // Overscan in menu (menu.cpp force-shows this below the menu colors)
 };
 const uint8_t g_available_screen_modes_gb[] = {
         0,   // SCANLINE_8_7,
@@ -829,7 +830,11 @@ int main()
     {
         if (strlen(selectedRom) == 0 || reset == true)
         {
+#if PICO_RP2350
             menu("Pico-PeanutGB", ErrorMessage, isFatalError, showSplash, ".gb .gbc", selectedRom); 
+#else
+            menu("Pico-PeanutGB", ErrorMessage, isFatalError, showSplash, ".gb", selectedRom); 
+#endif         
         }
       
         printf("Now playing: %s\n", selectedRom);

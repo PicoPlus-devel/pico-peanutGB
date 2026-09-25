@@ -34,9 +34,9 @@ sound) from the settings menu. This setting automatically enables external audio
 
 These RP2350 boards have also been switched from PicoDVI to HSTX. (audio and Video):
 
-- [Breadboard build](https://github.com/fhoedemakers/pico-infonesPlus?tab=readme-ov-file#raspberry-pi-pico-or-pico-2-setup-with-adafruit-hardware-and-breadboard)
-- [PCB build](https://github.com/fhoedemakers/pico-infonesPlus?tab=readme-ov-file#pcb-with-raspberry-pi-pico-or-pico-2)
-- [Adafruit Metro RP2350](https://github.com/fhoedemakers/pico-infonesPlus?tab=readme-ov-file#adafruit-metro-rp2350)
+- [Breadboard build](https://github.com/PicoPlus-devel/pico-infonesPlus?tab=readme-ov-file#raspberry-pi-pico-or-pico-2-setup-with-adafruit-hardware-and-breadboard)
+- [PCB build](https://github.com/PicoPlus-devel/pico-infonesPlus?tab=readme-ov-file#pcb-with-raspberry-pi-pico-or-pico-2)
+- [Adafruit Metro RP2350](https://github.com/PicoPlus-devel/pico-infonesPlus?tab=readme-ov-file#adafruit-metro-rp2350)
 
 All other boards continue to use PicoDVI and work as before.
 
@@ -54,7 +54,7 @@ All other boards continue to use PicoDVI and work as before.
   the same safety net is enabled there too just in case.)
 
 # v0.9 Release Notes
-- Added support for [Murmulator M1 and M2 boards](https://murmulator.ru). [@javavi](https://github.com/javavi)  [#150](https://github.com/fhoedemakers/pico-infonesPlus/issues/150)
+- Added support for [Murmulator M1 and M2 boards](https://murmulator.ru). [@javavi](https://github.com/javavi)  [#150](https://github.com/PicoPlus-devel/pico-infonesPlus/issues/150)
   - M1: RP2040/RP2350
   - M2: RP2350 only
   **Note**: These Murmulator M1 and M2 builds are untested. Please report any issues.
@@ -88,7 +88,7 @@ All other boards continue to use PicoDVI and work as before.
 
 - Game Boy Color games can be played now.
 - In-game hotkeys are now consistent with the other emulators. 
-- Themed borders/bezels are shown in-game. For this you need the latest [metadata pack](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/GBMetadata.zip) from the releases section. Download and unzip it's contents to the root of the SD card.
+- Themed borders/bezels are shown in-game. For this you need the latest [metadata pack](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/GBMetadata.zip) from the releases section. Download and unzip it's contents to the root of the SD card.
 - Support for [Retro-bit 8 button Genesis-USB](https://www.retro-bit.com/controllers/genesis/#usb). 
 - Added support for [Adafruit Fruit Jam](https://www.adafruit.com/product/6200):  
   - Uses HSTX for video output.  
@@ -111,7 +111,7 @@ All other boards continue to use PicoDVI and work as before.
 - Framebuffer implemented in SRAM. This eliminates the red flicker during slow operations, such as SD card I/O.
 
 - **Cover art and metadata support**:  
-  - Download pack [here](https://github.com/fhoedemakers/pico-peanutGB/releases/latest/download/GBMetadata.zip).  
+  - Download pack [here](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/GBMetadata.zip).  
   - Extract the zip contents to the **root of the SD card**.  
   - In the menu:  
     - Highlight a game and press **START** → show cover art and metadata.  
@@ -130,9 +130,9 @@ Huge thanks to [Gavin Knight](https://github.com/DynaMight1124) for providing th
 - Support added for Adafruit Metro RP2350 board. See README for more info. No RISCV support yet.
 - Switched to SD card driver pico_fatfs from https://github.com/elehobica/pico_fatfs. This is required for the Adafruit Metro RP2350. Thanks to [elehobica](https://github.com/elehobica/pico_fatfs) for helping making it work for the Pimoroni Pico DV Demo board.
 - Besides FAT32, SD cards can now also be formatted as exFAT.
-- Nes controller PIO code updated by [@ManCloud](https://github.com/ManCloud). This fixes the NES controller issues on the Waveshare RP2040 - PiZero board. [#8](https://github.com/fhoedemakers/pico_shared/issues/8)
+- Nes controller PIO code updated by [@ManCloud](https://github.com/ManCloud). This fixes the NES controller issues on the Waveshare RP2040 - PiZero board. [#8](https://github.com/PicoPlus-devel/pico_shared/issues/8)
 - Board configs are moved to pico_shared.
 
 ## Fixes
-- Fixed Pico 2 W: Led blinking causes screen flicker and ioctl timeouts [#2](https://github.com/fhoedemakers/pico_shared/issues/2). Solved with in SDK 2.1.1
+- Fixed Pico 2 W: Led blinking causes screen flicker and ioctl timeouts [#2](https://github.com/PicoPlus-devel/pico_shared/issues/2). Solved with in SDK 2.1.1
 - WII classic controller: i2c bus instance (i2c0 / i2c1) not hardcoded anymore but configurable via CMakeLists.txt. 
