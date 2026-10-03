@@ -8,6 +8,15 @@ Adds **USB drive mode**, which shows the SD card on a computer as a USB drive so
 
 [See setup section in in Pico-infoNesPlus readme how to install and wire up](https://github.com/PicoPlus-devel/pico-infonesPlus#pico-setup)
 
+# v0.15 Release notes
+
+After updating, all settings return to their defaults once.
+
+## Fixes
+
+- **The Controller Test screen is now closed by holding SELECT + UP** for 2 seconds. SELECT + START conflicted with some 8BitDo wireless controllers.
+- **The B button of the AliExpress SNES USB controller works without pressing Y first.**
+
 # v0.14 Release notes
 
 ## What's new
