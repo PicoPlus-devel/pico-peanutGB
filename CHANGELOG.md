@@ -12,6 +12,10 @@ Adds **USB drive mode**, which shows the SD card on a computer as a USB drive so
 
 After updating, all settings return to their defaults once.
 
+## What's new
+
+- **Olimex RP2040-PICO-PC.** The emulator now runs on the [Olimex RP2040-PICO-PC](https://www.olimex.com/Products/MicroPython/PICO/RP2040-PICO-PC/) with a Raspberry Pi Pico 2: HDMI, sound through HDMI and the audio jack, a USB controller on the USB-A port and a NES or SNES controller on the UEXT connector. See [Olimex RP2040-PICO-PC](https://github.com/PicoPlus-devel/pico-infonesPlus#olimex-rp2040-pico-pc) in the pico-infonesPlus readme. Contributed by [DnCraptor](https://github.com/DnCraptor).
+
 ## Fixes
 
 - **The Controller Test screen is now closed by holding SELECT + UP** for 2 seconds. SELECT + START conflicted with some 8BitDo wireless controllers.
@@ -354,6 +358,14 @@ For more info about the Murmulator see this website: https://murmulator.ru/ and 
 | Board | Binary |
 |:--|:--|
 | Pico/Pico w | [PicoPeanutGB_MurmulatorM2_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_MurmulatorM2_arm.uf2) |
+
+### Olimex RP2040-PICO-PC
+
+| Board | Binary |
+|:--|:--|
+| Pico 2 | [PicoPeanutGB_OlimexPicoPC_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_OlimexPicoPC_arm.uf2) |
+
+There is no Pico 2 W binary for this board.
 
 ### Other downloads
 
