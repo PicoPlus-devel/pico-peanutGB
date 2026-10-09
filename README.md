@@ -40,6 +40,7 @@ The RP2350 boards play both Game Boy and Game Boy Color games. The RP2040 boards
 | [**SpotPear HDMI**](https://spotpear.com/index/product/detail/id/1207.html) | — | No setup section; wire the board according to its own documentation. |
 | **Murmulator M1** with a Pico 2 | — | See [murmulator.ru](https://murmulator.ru). Untested by me, please report any issues. |
 | **Murmulator M2** | — | RP2350 only. See [murmulator.ru](https://murmulator.ru). Untested by me, please report any issues. |
+| [**Olimex RP2040-PICO-PC**](https://www.olimex.com/Products/MicroPython/PICO/RP2040-PICO-PC/) with a Raspberry Pi Pico 2 | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#olimex-rp2040-pico-pc) | Sound through HDMI and the audio jack. USB controller on the USB-A port, NES or SNES controller on the UEXT connector. No Pico 2 W binary. |
 
 #### RP2040 boards (Game Boy only)
 
@@ -363,6 +364,7 @@ This emulator is other people's work brought together on a Pico.
 - The **PicoNES Mini** and **PicoNES Micro** PCBs, and the 3D-printed cases for all of them, were designed by **Gavin Knight** ([DynaMight1124](https://github.com/DynaMight1124)).
 - The [metadata pack](#using-metadata) — the box art, game info and themed borders/bezels on the SD card — was put together by **Gavin Knight** ([DynaMight1124](https://github.com/DynaMight1124)).
 - **Murmulator M1 and M2** support was contributed by [@javavi](https://github.com/javavi).
+- **Olimex RP2040-PICO-PC** support, including sound through its audio jack, was contributed by [DnCraptor](https://github.com/DnCraptor).
 
 **This project**
 
