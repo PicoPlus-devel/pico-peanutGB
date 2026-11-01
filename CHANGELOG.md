@@ -10,6 +10,10 @@
 
 # v0.15.2 Release notes
 
+## Changes
+
+- **USB keyboard in the menus.** Enter selects and Esc goes back.
+
 ## Fixes
 
 - **USB controllers on the Adafruit Fruit Jam and other boards with PIO-USB are now found at every start.** On boards with an older RP2350 chip they were often not detected.
