@@ -1,14 +1,19 @@
 # CHANGELOG
 
-**v0.15.3** fixes picture drop-outs and flickering lines in DVI mode on boards with HSTX video.
+**v0.16** adds support for the Pico Computer 3 and a PCB for the Waveshare RP2350-PiZero, and fixes picture drop-outs and flickering lines in DVI mode on boards with HSTX video.
 
 # General Info
 
 [Binaries for each configuration and PCB design are at the end of this page](#downloads___).
 
-[See setup section in in Pico-infoNesPlus readme how to install and wire up](https://github.com/PicoPlus-devel/pico-infonesPlus#pico-setup)
+[See the setup section in the pico-infonesPlus readme for how to install and wire up](https://github.com/PicoPlus-devel/pico-infonesPlus#setup)
 
-# v0.15.3 Release notes
+# v0.16 Release notes
+
+## What's new
+
+- **Pico Computer 3.** The emulator now runs on the [Pico Computer 3](https://github.com/UKTailwind/Pico-Computer-3): HDMI, sound through HDMI or the audio jack, USB controllers, PSRAM, and NES or SNES controllers and a Wii Classic controller on the I/O header. The pin assignment may still change. See [Pico Computer 3](https://github.com/PicoPlus-devel/pico-infonesPlus#pico-computer-3) in the pico-infonesPlus readme. Thanks to @javavi.
+- **PCB for the Waveshare RP2350-PiZero.** The emulator now runs on a PCB for the Waveshare RP2350-PiZero, designed by @szuping: HDMI, sound through HDMI or the audio jack, a USB controller on the PIO-USB port, NES and SNES controller ports, and a socket for an ESP32 module that connects Bluetooth controllers through [BlueRetro](https://github.com/darthcloud/blueretro). The PCB design is not yet available. See [PCB with Waveshare RP2350-PiZero](https://github.com/PicoPlus-devel/pico-infonesPlus#pcb-with-waveshare-rp2350-pizero) in the pico-infonesPlus readme.
 
 ## Changes
 
@@ -399,6 +404,26 @@ For more info about the Murmulator see this website: https://murmulator.ru/ and 
 | Pico 2 | [PicoPeanutGB_OlimexPicoPC_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_OlimexPicoPC_arm.uf2) |
 
 There is no Pico 2 W binary for this board.
+
+### Pico Computer 3
+
+For more info about the Pico Computer 3 see https://github.com/UKTailwind/Pico-Computer-3
+
+| Board | Binary |
+|:--|:--|
+| Pico Computer 3 (PC3) | [PicoPeanutGB_PicoComputer3_arm.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_PicoComputer3_arm.uf2) |
+
+### PCB Waveshare RP2350-PiZero
+
+For more info about this PCB, designed by Liu Szuping, see [PCB with Waveshare RP2350-PiZero](https://github.com/PicoPlus-devel/pico-infonesPlus#pcb-with-waveshare-rp2350-pizero). The PCB design is not yet available.
+
+| Board | Binary |
+|:--|:--|
+| Waveshare RP2350-PiZero (*) | [PicoPeanutGB_WaveShareRP2350PiZeroLiuPCB_arm_piousb.uf2](https://github.com/PicoPlus-devel/pico-peanutGB/releases/latest/download/PicoPeanutGB_WaveShareRP2350PiZeroLiuPCB_arm_piousb.uf2) |
+
+This binary is only for the RP2350-PiZero on this PCB.
+
+(*) If you fitted this board with PSRAM and it has a non-Winbond flash chip, apply the [flash_config fix](https://github.com/PicoPlus-devel/pico-infonesPlus#psram-with-a-non-winbond-flash-chip) before flashing the emulator.
 
 ### Other downloads
 

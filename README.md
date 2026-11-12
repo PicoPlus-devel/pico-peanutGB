@@ -41,6 +41,8 @@ The RP2350 boards play both Game Boy and Game Boy Color games. The RP2040 boards
 | **Murmulator M1** with a Pico 2 | — | See [murmulator.ru](https://murmulator.ru). Untested by me, please report any issues. |
 | **Murmulator M2** | — | RP2350 only. See [murmulator.ru](https://murmulator.ru). Untested by me, please report any issues. |
 | [**Olimex RP2040-PICO-PC**](https://www.olimex.com/Products/MicroPython/PICO/RP2040-PICO-PC/) with a Raspberry Pi Pico 2 | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#olimex-rp2040-pico-pc) | Sound through HDMI and the audio jack. USB controller on the USB-A port, NES or SNES controller on the UEXT connector. No Pico 2 W binary. |
+| [**Pico Computer 3**](https://github.com/UKTailwind/Pico-Computer-3) | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#pico-computer-3) | Roms are loaded into the onboard PSRAM. Sound through HDMI or the audio jack. USB controllers on the USB-A ports, NES or SNES controllers and a Wii Classic controller on the I/O header. The pin assignment may still change. |
+| [**PCB for the Waveshare RP2350-PiZero**](https://github.com/PicoPlus-devel/pico-infonesPlus#pcb-with-waveshare-rp2350-pizero), designed by Liu Szuping | [Setup](https://github.com/PicoPlus-devel/pico-infonesPlus/blob/main/README.md#pcb-with-waveshare-rp2350-pizero) | Sound through HDMI or the audio jack. USB controller on the PIO-USB port, NES or SNES controllers in the controller ports, or Bluetooth controllers through an ESP32 module running [BlueRetro](https://github.com/darthcloud/blueretro). Supports the optional PSRAM chip. The PCB design is not yet available. |
 
 #### RP2040 boards (Game Boy only)
 
@@ -66,6 +68,8 @@ Four community PCB designs turn a supported board and its breakouts into a small
 
 > [!NOTE]
 > The PicoNES v2.6 and v2.8 are shown with a Pimoroni Pico Plus 2. A Raspberry Pi Pico 2, Pico 2 W or original Pico can also be fitted.
+
+A fifth design, the [PCB for the Waveshare RP2350-PiZero](https://github.com/PicoPlus-devel/pico-infonesPlus#pcb-with-waveshare-rp2350-pizero) by Liu Szuping, is supported by the emulator, but the design is not yet available.
 
 > [!NOTE]
 > Sellers on AliExpress have copied the PicoNES design and sell ready-made boards. For questions about those, contact the seller.
@@ -329,6 +333,8 @@ This emulator is other people's work brought together on a Pico.
 - The [metadata pack](#using-metadata) — the box art, game info and themed borders/bezels on the SD card — was put together by **Gavin Knight** ([DynaMight1124](https://github.com/DynaMight1124)).
 - **Murmulator M1 and M2** support was contributed by [@javavi](https://github.com/javavi).
 - **Olimex RP2040-PICO-PC** support, including sound through its audio jack, was contributed by [DnCraptor](https://github.com/DnCraptor).
+- **Pico Computer 3** support was contributed by [@javavi](https://github.com/javavi).
+- The **PCB for the Waveshare RP2350-PiZero** was designed by Liu Szuping ([szuping](https://github.com/szuping)).
 
 **This project**
 
