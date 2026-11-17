@@ -8,6 +8,12 @@
 
 [See the setup section in the pico-infonesPlus readme for how to install and wire up](https://github.com/PicoPlus-devel/pico-infonesPlus#setup)
 
+# Next release
+
+## Changes
+
+- Built with Pico SDK 2.3.1. This leaves a little more memory free, about 0.4 KB.
+
 # v0.16 Release notes
 
 ## What's new
