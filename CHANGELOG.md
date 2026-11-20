@@ -8,7 +8,9 @@
 
 [See the setup section in the pico-infonesPlus readme for how to install and wire up](https://github.com/PicoPlus-devel/pico-infonesPlus#setup)
 
-# Next release
+# v0.16_bl
+
+This version is built for [pico-bootLoader](https://github.com/PicoPlus-devel/pico-bootLoader) only, and is included in its SD-card archive. It has no release of its own: without pico-bootLoader, keep using v0.16.
 
 ## What's new
 
